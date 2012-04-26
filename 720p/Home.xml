@@ -13,46 +13,8 @@
 			<fadetime>1000</fadetime>
 		</control>
 		<include>CommonMediaPlayingBackground</include>
-		<control type="image">
-			<posx>0</posx>
-			<posy>340r</posy>
-			<width>1280</width>
-			<height>250</height>
-			<colordiffuse>AAFFFFFF</colordiffuse>
-			<texture>HomeNowPlayingBack.png</texture>
-			<include>Window_OpenClose_Animation</include>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>90r</posy>
-			<width>1280</width>
-			<height>90</height>
-			<texture>floor.png</texture>
-			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
-			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
-		</control>
-		<control type="image">
-			<description>LOGO</description>
-			<posx>512</posx>
-			<posy>145r</posy>
-			<width>256</width>
-			<height>128</height>
-			<aspectratio aligny="bottom">keep</aspectratio>
-			<texture>xbmc-logo.png</texture>
-			<visible>!IntegerGreaterThan(Container(9002).NumItems,0)</visible>
-			<include>VisibleFadeEffect</include>
-			<include>Window_OpenClose_Animation</include>
-		</control>
-		<control type="image">
-			<posx>0</posx>
-			<posy>125</posy>
-			<width>1280</width>
-			<height>250</height>
-			<colordiffuse>AAFFFFFF</colordiffuse>
-			<texture>HomeNowPlayingBack.png</texture>
-			<visible>[Player.HasAudio + !Skin.HasSetting(homepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] | [Container(9000).HasFocus(2) + Skin.HasSetting(homepageShowRecentlyAdded)] | [Container(9000).HasFocus(10) + Skin.HasSetting(homepageShowRecentlyAdded)] | [Container(9000).HasFocus(11) + Skin.HasSetting(homepageShowRecentlyAdded)]</visible>
-			<include>Window_OpenClose_Animation</include>
-		</control>
+
+
 		<!-- Music Info -->
 		<control type="group">
 			<posx>0</posx>
@@ -435,8 +397,23 @@
 				<ondown>9000</ondown>
 			</control>
 		</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture>vignette.png</texture>
+		<visible>Window.IsActive(0)</visible>
+	</control>
+		<control type="image">
+		<posx>0</posx>
+		<posy>598</posy>
+		<width>573</width>
+		<height>35</height>
+		<texture>rssfeed1.png</texture>
+	</control>
 		<control type="group">
-			<posy>370</posy>
+			<posy>530</posy>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
@@ -445,80 +422,37 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="group" id="9001">
-				<posx>0</posx>
-				<posy>70</posy>
-				<onup>9000</onup>
-				<ondown>9002</ondown>
-				<control type="grouplist" id="9010">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9010</onleft>
-					<onright>9010</onright>
-					<visible>Container(9000).HasFocus(2)</visible>
-					<include>HomeSubMenuVideos</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9016">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9016</onleft>
-					<onright>9016</onright>
-					<visible>Container(9000).HasFocus(10)</visible>
-					<include>HomeSubMenuMovies</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9017">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9017</onleft>
-					<onright>9017</onright>
-					<visible>Container(9000).HasFocus(11)</visible>
-					<include>HomeSubMenuTVShows</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9011">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9011</onleft>
-					<onright>9011</onright>
-					<visible>Container(9000).HasFocus(3)</visible>
-					<include>HomeSubMenuMusic</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9012">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9012</onleft>
-					<onright>9012</onright>
-					<visible>Container(9000).HasFocus(5)</visible>
-					<include>HomeSubMenuSystem</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9013">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>Container(9000).HasFocus(6)</visible>
-					<include>HomeSubMenuPlayDisc</include> <!-- Buttons for the grouplist -->
-				</control>
-				<control type="grouplist" id="9014">
-					<include>HomeSubMenuCommonValues</include>
-					<onleft>9013</onleft>
-					<onright>9013</onright>
-					<visible>Container(9000).HasFocus(4)</visible>
-					<include>HomeSubMenuPictures</include> <!-- Buttons for the grouplist -->
-				</control>
-			</control>
+			
+			
 			<control type="image">
-				<posx>-100</posx>
+				<posx>0</posx>
 				<posy>0</posy>
-				<width>1480</width>
+				<width>1280</width>
 				<height>75</height>
-				<texture border="0,6,0,6">HomeBack.png</texture>
+				<texture>glass_home_xbox3.png</texture>
 			</control>
 			<control type="image">
 				<posx>0</posx>
-				<posy>5</posy>
-				<width>1280</width>
-				<height>6</height>
-				<texture>HomeOverlay1.png</texture>
+				<posy>57</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+
+				<animation type="WindowOpen" reversible="false" condition="Window.IsActive(Home)">
+					<effect type="slide" start="0,0" end="1280,0" tween="cubic" easing="in" time="1000" />
+					<effect type="fade" start="0" end="100" time="100" />
+					<effect type="fade" start="100" end="0" delay="900" time="100" />
+				</animation>
+				<animation type="WindowClose" reversible="false" condition="Window.IsActive(Home)">
+					<effect type="fade" start="100" end="0" time="100" />
+				</animation>
 			</control>
-			<control type="fixedlist" id="9000">
-				<posx>-110</posx>
+
+			<control type="wraplist" id="9000">
+				<posx>-50</posx>
 				<posy>5</posy>
-				<width>1500</width>
-				<height>60</height>
+				<width>1320</width>
+				<height>68</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
 				<onup>600</onup>
@@ -528,58 +462,30 @@
 				<focusposition>2</focusposition>
 				<movement>1</movement>
 				<orientation>Horizontal</orientation>
-				<itemlayout height="60" width="300">
-					<control type="image">
-						<posx>0</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
-					<control type="image">
-						<posx>299</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
+				<itemlayout height="68" width="355">
 					<control type="label">
 						<posx>150</posx>
-						<posy>0</posy>
-						<width>290</width>
+						<posy>3</posy>
+						<width>355</width>
 						<height>60</height>
-						<font>font50caps_title</font>
-						<textcolor>grey3</textcolor>
+						<font>menufontacens</font>
+						<textcolor>FF000000</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout height="60" width="300">
-					<control type="image">
-						<posx>0</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
-					<control type="image">
-						<posx>299</posx>
-						<posy>4</posy>
-						<width>1</width>
-						<height>52</height>
-						<texture>HomeSeperator.png</texture>
-					</control>
+				<focusedlayout height="68" width="355">
 					<control type="label">
 						<posx>150</posx>
-						<posy>0</posy>
-						<width>290</width>
+						<posy>3</posy>
+						<width>355</width>
 						<height>60</height>
-						<font>font50caps_title</font>
-						<textcolor>white</textcolor>
+						<font>menufontacensfocus</font>
+						<textcolor>FFcbcbcb</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 						<animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(9000)">conditional</animation>
 					</control>
 				</focusedlayout>
@@ -598,6 +504,13 @@
 						<thumb>$INFO[Skin.String(Home_Custom_Back_Pictures_Folder)]</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
 					</item>
+					<item id="10">
+						<label>20342</label>
+						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+						<icon>special://skin/backgrounds/videos.jpg</icon>
+						<thumb>$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</thumb>
+						<visible>Skin.HasSetting(HomeMenuNoMoviesButton) + Library.HasContent(Movies)</visible>
+					</item>					
 					<item id="2">
 						<label>3</label>
 						<onclick condition="!Skin.HasSetting(HomeVideostoFiles)">ActivateWindow(Videos)</onclick>
@@ -605,13 +518,6 @@
 						<icon>special://skin/backgrounds/videos.jpg</icon>
 						<thumb>$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</thumb>
 						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
-					</item>
-					<item id="10">
-						<label>20342</label>
-						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-						<icon>special://skin/backgrounds/videos.jpg</icon>
-						<thumb>$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</thumb>
-						<visible>Skin.HasSetting(HomeMenuNoMoviesButton) + Library.HasContent(Movies)</visible>
 					</item>
 					<item id="11">
 						<label>20343</label>
@@ -920,23 +826,15 @@
 			<include>Window_OpenClose_Animation</include>
 			<control type="rss">
 				<description>RSS feed</description>
-				<posx>100</posx>
-				<posy>0</posy>
+				<posx>7</posx>
+				<posy>-83</posy>
 				<height>30</height>
-				<width>1145</width>
-				<font>font12</font>
+				<width>552</width>
+				<font>fruity19</font>
 				<urlset>1</urlset>
 				<textcolor>blue</textcolor>
 				<titlecolor>blue</titlecolor>
 				<headlinecolor>white</headlinecolor>
-			</control>
-			<control type="image">
-				<description>RSS background</description>
-				<posx>1250</posx>
-				<posy>2</posy>
-				<width>24</width>
-				<height>24</height>
-				<texture>icon-rss.png</texture>
 			</control>
 		</control>
 		<control type="group" id="10">
@@ -985,44 +883,7 @@
 				<ondown>9003</ondown>
 			</control>
 		</control>
-		<control type="group">
-			<posx>520r</posx>
-			<posy>0</posy>
-			<animation effect="slide" start="0,0" end="-60,0" delay="0" time="300" condition="Window.IsVisible(MuteBug)">conditional</animation>
-			<animation effect="slide" start="0,0" end="550,0" delay="0" time="300">WindowClose</animation>
-			<animation effect="slide" start="550,0" end="0,0" delay="0" time="300">WindowOpen</animation>
-			<visible>!Skin.HasSetting(homepageWeatherinfo) + Weather.IsFetched</visible>
-			<control type="image">
-				<description>time background</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>180</width>
-				<height>35</height>
-				<texture flipx="true" border="32,0,0,0">header.png</texture>
-			</control>
-			<control type="image">
-				<description>Weather image</description>
-				<posx>25</posx>
-				<posy>0</posy>
-				<width>30</width>
-				<height>30</height>
-				<aspectratio>keep</aspectratio>
-				<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
-			</control>
-			<control type="label">
-				<description>time label</description>
-				<posx>60</posx>
-				<posy>0</posy>
-				<width>100</width>
-				<height>28</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<label>[B]$INFO[Weather.Temperature][/B]</label>
-			</control>
-		</control>
+
 		<control type="group">
 			<posx>390r</posx>
 			<posy>0</posy>
@@ -1035,11 +896,11 @@
 				<posy>0</posy>
 				<width>440</width>
 				<height>35</height>
-				<texture flipx="true" border="32,0,0,0">header.png</texture>
+				<texture flipx="true" border="32,0,0,0">rssfeed1.png</texture>
 			</control>
 			<control type="label">
 				<description>time label</description>
-				<posx>30</posx>
+				<posx>45</posx>
 				<posy>0</posy>
 				<width>400</width>
 				<height>28</height>
@@ -1048,7 +909,37 @@
 				<font>font12</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<label>[COLOR=grey]$INFO[System.Date][/COLOR] | $INFO[System.Time]</label>
+				<label>$INFO[System.Date] | $INFO[System.Time]</label>
+			</control>
+		</control>
+				<control type="group">
+			<posx>520r</posx>
+			<posy>0</posy>
+			<animation effect="slide" start="0,0" end="-60,0" delay="0" time="300" condition="Window.IsVisible(MuteBug)">conditional</animation>
+			<animation effect="slide" start="0,0" end="550,0" delay="0" time="300">WindowClose</animation>
+			<animation effect="slide" start="550,0" end="0,0" delay="0" time="300">WindowOpen</animation>
+			<visible>!Skin.HasSetting(homepageWeatherinfo) + Weather.IsFetched</visible>
+			<control type="image">
+				<description>Weather image</description>
+				<posx>490</posx>
+				<posy>1</posy>
+				<width>25</width>
+				<height>25</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+			</control>
+			<control type="label">
+				<description>time label</description>
+				<posx>440</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>28</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[B]$INFO[Weather.Temperature][/B]</label>
 			</control>
 		</control>
 	</controls>	
