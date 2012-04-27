@@ -71,13 +71,27 @@
 		<name>acens21</name>
 		<filename>Acens.ttf</filename>
 		<size>21</size>
+		<style>bold</style>
 	</font>
+	
+	<font>
+		<name>acens15b</name>
+		<filename>Acens.ttf</filename>
+		<size>18</size>
+		<style>bold</style>
+	</font>	
 	
 		<font>
 		<name>acens30</name>
 		<filename>Acens.ttf</filename>
 		<size>30</size>
 	</font>
+	
+	<font>
+		<name>acens36</name>
+		<filename>Acens.ttf</filename>
+		<size>36</size>
+	</font>	
 	
     <font>
       <name>menufontacens</name>

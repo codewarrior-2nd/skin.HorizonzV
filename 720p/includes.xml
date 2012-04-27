@@ -95,11 +95,11 @@
 		<textwidth>195</textwidth>
 		<align>center</align>
 		<aligny>center</aligny>
-		<font>font12</font>
-		<textcolor>grey2</textcolor>
-		<focusedcolor>white</focusedcolor>
-		<texturefocus border="5">HomeSubFO.png</texturefocus>
-		<texturenofocus border="5">HomeSubNF.png</texturenofocus>
+		<font>acens30</font>
+		<textcolor>black</textcolor>
+		<focusedcolor>black</focusedcolor>
+		<texturefocus border="5">home_focus3.png</texturefocus>
+		<texturenofocus border="5">home_focus2.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
 	<include name="HomeSubMenuCommonValues">

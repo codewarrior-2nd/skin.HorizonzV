@@ -1,9 +1,10 @@
 <includes>
 	<include name="HomeSubMenuVideos">
+		
 		<control type="image" id="90101">
-			<width>35</width>
-			<height>35</height>
-			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+			<width>25</width>
+			<height>40</height>
+			<texture border="0,0,0,3" flipx="false">subend.png</texture>
 		</control>
 		<control type="button" id="90102">
 			<include>ButtonHomeSubCommonValues</include>
@@ -40,10 +41,10 @@
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
 		</control>
 		<control type="image" id="90108">
-			<width>35</width>
-			<height>35</height>
-			<texture border="0,0,0,3">HomeSubEnd.png</texture>
-		</control>
+			<width>25</width>
+			<height>40</height>
+			<texture border="0,0,0,3" flipx="true">subend.png</texture>
+		</control>		
 	</include>
 	<include name="HomeSubMenuMovies">
 		<control type="image" id="90161">
