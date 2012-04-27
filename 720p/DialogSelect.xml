@@ -13,55 +13,8 @@
 			<posy>0</posy>
 			<width>610</width>
 			<height>650</height>
-			<texture border="40">DialogBack.png</texture>
+			<texture border="40">filemanback2.png</texture>
 			<visible>![Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)]</visible>
-		</control>
-		<control type="image">
-			<description>background image</description>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>610</width>
-			<height>650</height>
-			<texture border="40">DialogBack2.png</texture>
-			<visible>Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)</visible>
-		</control>
-		<control type="image">
-			<description>Dialog Header image</description>
-			<posx>40</posx>
-			<posy>16</posy>
-			<width>530</width>
-			<height>40</height>
-			<texture>dialogheader.png</texture>
-		</control>
-		<control type="label" id="1">
-			<description>header label</description>
-			<posx>40</posx>
-			<posy>20</posy>
-			<width>530</width>
-			<height>30</height>
-			<font>font13_title</font>
-			<label>$LOCALIZE[13406]</label>
-			<align>center</align>
-			<aligny>center</aligny>
-			<textcolor>selected</textcolor>
-			<shadowcolor>black</shadowcolor>
-		</control>
-		<control type="button">
-			<description>Close Window button</description>
-			<posx>520</posx>
-			<posy>15</posy>
-			<width>64</width>
-			<height>32</height>
-			<label>-</label>
-			<font>-</font>
-			<onclick>PreviousMenu</onclick>
-			<texturefocus>DialogCloseButton-focus.png</texturefocus>
-			<texturenofocus>DialogCloseButton.png</texturenofocus>
-			<onleft>10</onleft>
-			<onright>10</onright>
-			<onup>10</onup>
-			<ondown>10</ondown>
-			<visible>system.getbool(input.enablemouse)</visible>
 		</control>
 		<control type="list" id="3">
 			<posx>20</posx>
@@ -88,7 +41,7 @@
 					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
-					<font>font13</font>
+					<font>acens21</font>
 					<textcolor>grey2</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
@@ -120,7 +73,7 @@
 					<posy>0</posy>
 					<width>510</width>
 					<height>40</height>
-					<font>font13</font>
+					<font>acens21</font>
 					<textcolor>white</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
@@ -147,7 +100,8 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="5">button-nofocus.png</texture>
+					<texture border="5">home_focus2.png</texture>
+					<colordiffuse>BFFFFFFF</colordiffuse>
 				</control>
 				<control type="image">
 					<posx>2</posx>
@@ -163,8 +117,8 @@
 					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>grey</textcolor>
+					<font>acens21</font>
+					<textcolor>black</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -175,8 +129,8 @@
 					<posy>30</posy>
 					<width>450</width>
 					<height>50</height>
-					<font>font12</font>
-					<textcolor>grey</textcolor>
+					<font>acens15b</font>
+					<textcolor>black</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
@@ -188,7 +142,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="5">button-nofocus.png</texture>
+					<texture border="5">home_focus2.png</texture>
 					<visible>!Control.HasFocus(6)</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
@@ -197,7 +151,7 @@
 					<posy>0</posy>
 					<width>550</width>
 					<height>80</height>
-					<texture border="5">button-focus2.png</texture>
+					<texture border="5">home_focus3.png</texture>
 					<visible>Control.HasFocus(6)</visible>
 					<include>VisibleFadeEffect</include>
 				</control>
@@ -215,8 +169,8 @@
 					<posy>0</posy>
 					<width>450</width>
 					<height>30</height>
-					<font>font13</font>
-					<textcolor>white</textcolor>
+					<font>acens21</font>
+					<textcolor>black</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -227,8 +181,8 @@
 					<posy>30</posy>
 					<width>450</width>
 					<height>50</height>
-					<font>font12</font>
-					<textcolor>grey</textcolor>
+					<font>acens15b</font>
+					<textcolor>black</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
@@ -258,7 +212,7 @@
 			<posy>585</posy>
 			<width>300</width>
 			<height>35</height>
-			<font>font12</font>
+			<font>acens21</font>
 			<align>right</align>
 			<aligny>center</aligny>
 			<scroll>true</scroll>
@@ -272,7 +226,7 @@
 			<posy>587</posy>
 			<width>300</width>
 			<height>35</height>
-			<font>font12</font>
+			<font>acens15b</font>
 			<align>right</align>
 			<aligny>center</aligny>
 			<scroll>true</scroll>
@@ -287,9 +241,9 @@
 			<width>200</width>
 			<height>40</height>
 			<label>186</label>
-			<font>font12_title</font>
-			<textcolor>white</textcolor>
-			<focusedcolor>white</focusedcolor>
+			<font>acens21</font>
+			<textcolor>green</textcolor>
+
 			<align>center</align>
 			<onleft>61</onleft>
 			<onright>3</onright>
