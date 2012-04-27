@@ -1,14 +1,46 @@
 <includes>
 	<include name="HomeRecentlyAddedInfo">
-	<!--	<control type="image">
-			<posx>-30</posx>
+		<control type="image">
+			<posx>660</posx>
 			<posy>25</posy>
-			<width>1380</width>
-			<height>380</height>
+			<width>640</width>
+			<height>375</height>
 			<texture flipx="true">showcasepanel3.png</texture>
+ 			<colordiffuse>BFFFFFFF</colordiffuse>
 			<visible>Container(9000).HasFocus(10) | Container.HasFocus(8000)</visible>
-			<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(8000)">Conditional</animation>
-		</control>	 -->
+		</control>
+			<control type="image">
+				<posx>670</posx>
+				<posy>20</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>Control.HasFocus(8000)</visible>
+				<animation type="Conditional" reversible="false" condition="Control.HasFocus(8000)">
+					<effect type="slide" start="0,0" end="680,0" tween="cubic" easing="in" time="1000" />
+					<effect type="fade" start="0" end="100" time="100" />
+					<effect type="fade" start="100" end="0" delay="900" time="100" />
+				</animation>
+				<animation type="WindowClose" reversible="false" condition="Window.IsActive(Home)">
+					<effect type="fade" start="100" end="0" time="100" />
+				</animation>
+			</control>
+			<control type="image">
+				<posx>670</posx>
+				<posy>285</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>Control.HasFocus(8000)</visible>
+				<animation type="Conditional" reversible="false" condition="Control.HasFocus(8000)">
+					<effect type="slide" start="0,0" end="680,0" tween="cubic" easing="in" time="1000" />
+					<effect type="fade" start="0" end="100" time="100" />
+					<effect type="fade" start="100" end="0" delay="900" time="100" />
+				</animation>
+				<animation type="WindowClose" reversible="false" condition="Window.IsActive(Home)">
+					<effect type="fade" start="100" end="0" time="100" />
+				</animation>
+			</control>
 		<control type="group" id="9003">
 			<onup>20</onup>
 			<ondown>9000</ondown>
@@ -41,7 +73,7 @@
 				<control type="wraplist" id="8000">
 					<animation effect="slide" start="0,0" end="-360,0" time="300" condition="Control.HasFocus(8000)">Conditional</animation>
 					<animation effect="slide" start="0,0" end="360,0" time="300" condition="Control.HasFocus(8001)">Conditional</animation>
-					<posx>-200</posx>
+					<posx>-190</posx>
 					<posy>10</posy>
 					<width>650</width>
 					<height>220</height>
@@ -103,10 +135,9 @@
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>Container(9000).Hasfocus(10) | [[Container(9000).Hasfocus(2) + !Skin.HasSetting(HomeMenuNoMoviesButton)] + Skin.HasSetting(HomeMenuNoTVShowsButton)]</visible>
 				<include>VisibleFadeEffect</include>
-
 				<control type="wraplist" id="8000">
-					<posx>-60</posx>
-					<posy>10</posy>
+					<posx>480</posx>
+					<posy>35</posy>
 					<width>610</width>
 					<height>220</height>
 					<onleft>8000</onleft>
@@ -114,12 +145,25 @@
 					<onup>20</onup>
 					<ondown>600</ondown>
 					<viewtype label="535">list</viewtype>
-					<focusposition>2</focusposition>
+					<focusposition>1</focusposition>
 					<pagecontrol>-</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<orientation>Horizontal</orientation>
 					<include>RecentlyAddedMovieContents</include>
 				</control>
+				<control type="label">
+					<posx>512</posx>
+					<posy>8</posy>
+					<width>600</width>
+					<height>20</height>
+					<font>acens21</font>
+					<textcolor>green</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>Latest Movies</label>
+			</control>				
 			</control>
 			<control type="group">
 				<posx>0</posx>
@@ -159,7 +203,7 @@
 		</control>
 	</include>
 	<include name="RecentlyAddedMovieContents">
-		<itemlayout height="221" width="208">
+		<itemlayout height="261" width="208">
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -168,13 +212,15 @@
 				<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
 			</control>
 		</itemlayout>
-		<focusedlayout height="221" width="208">
+		<focusedlayout height="261" width="208">
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>208</width>
-				<height>221</height>
+				<height>218</height>
 				<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
+				<bordertexture border="5">folder-focus.png</bordertexture>
+				<bordersize>5</bordersize>				
 				<visible>Control.HasFocus(8000)</visible>
 			</control>
 			<control type="image">
