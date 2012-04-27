@@ -13,8 +13,6 @@
 			<fadetime>1000</fadetime>
 		</control>
 		<include>CommonMediaPlayingBackground</include>
-
-
 		<!-- Music Info -->
 		<control type="group">
 			<posx>0</posx>
@@ -403,7 +401,7 @@
 		<width>1280</width>
 		<height>720</height>
 		<texture>vignette.png</texture>
-		<visible>Window.IsActive(0)</visible>
+		<visible>Window.IsActive(0) + Skin.HasSetting(vignette)</visible>
 	</control>
 		<control type="image">
 		<posx>0</posx>
