@@ -1,0 +1,90 @@
+<includes>	
+	<include name="Showcase">
+		<control type="group">
+			<control type="image">
+				<posy>-105</posy>
+				<posx>0</posx>
+				<width>1380</width>
+				<height>500</height>
+				<texture>showcasepanel3.png</texture>
+			</control>
+			<visible>Control.IsVisible(561)</visible>
+			<include>VisibleFadeEffect</include>
+			<posx>0</posx>
+			<posy>460</posy>
+			<control type="wraplist" id="561">
+				<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)]</visible>
+				<hitrect x="0" y="-10" w="1280" h="190" />
+				<posx>-230</posx>
+				<posy>-90</posy>
+				<width>1580</width>
+				<height>850</height>
+				<onleft>561</onleft>
+				<onright>561</onright>
+				<onup>2</onup>
+				<ondown>60</ondown>
+				<viewtype label="Showcase">fixed</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<focusposition>1</focusposition>
+				<movement>3</movement>
+				<orientation>horizontal</orientation>
+				<preloaditems>4</preloaditems>
+				<itemlayout height="256" width="250">
+					<control type="image">
+						<posx>0</posx>
+						<posy>77</posy>
+						<width>208</width>
+						<height>256</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>335</posy>
+						<width>208</width>
+						<height>256</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true" flipy="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
+						<colordiffuse>BBFFFFFF</colordiffuse>
+					</control>
+				</itemlayout>
+				<focusedlayout height="336" width="290">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>256</width>
+						<height>336</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
+						<animation reversible="false" effect="zoom" start="0,16,208,256" end="-12,-77,256,336" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" start="-12,0,256,336" end="0,77,208,256" time="200">unfocus</animation>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>340</posy>
+						<width>256</width>
+						<height>336</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true" flipy="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
+						<colordiffuse>BBFFFFFF</colordiffuse>
+					</control>					
+					<control type="image">
+						<posx>130</posx>
+						<posy>-35</posy>
+						<width>125</width>
+						<height>125</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true">overlay3d.png</texture>
+						<visible>substring(ListItem.Genre,action)</visible>
+					</control>					
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>	

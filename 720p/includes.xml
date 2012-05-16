@@ -15,6 +15,7 @@
 	<include file="weather+\WeekendForecast.xml" />
 	<include file="weather+\HourlyForecast.xml" />
 	<include file="weather+\MapsVideo.xml" />
+	<include file="ViewVideoShowcase.xml" />
 
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
