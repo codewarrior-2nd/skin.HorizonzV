@@ -2,11 +2,11 @@
 	<include name="Showcase">
 		<control type="group">
 			<control type="image">
-				<posy>-105</posy>
+				<posy>-490</posy>
 				<posx>0</posx>
 				<width>1380</width>
-				<height>500</height>
-				<texture>showcasepanel3.png</texture>
+				<height>750</height>
+				<texture>contentpanel.png</texture>
 			</control>
 			<visible>Control.IsVisible(561)</visible>
 			<include>VisibleFadeEffect</include>
@@ -16,9 +16,9 @@
 				<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(TVShowsUsePosters)]</visible>
 				<hitrect x="0" y="-10" w="1280" h="190" />
 				<posx>-230</posx>
-				<posy>-90</posy>
+				<posy>-200</posy>
 				<width>1580</width>
-				<height>850</height>
+				<height>1050</height>
 				<onleft>561</onleft>
 				<onright>561</onright>
 				<onup>2</onup>
@@ -33,57 +33,87 @@
 				<itemlayout height="256" width="250">
 					<control type="image">
 						<posx>0</posx>
-						<posy>77</posy>
+						<posy>142</posy>
 						<width>208</width>
-						<height>256</height>
+						<height>296</height>
 						<aspectratio>stretch</aspectratio>
 						<fadetime>200</fadetime>
 						<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
+						<animation effect="slide" start="0,0" end="60,0" time="300" delay="1500" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
 					</control>
 					<control type="image">
 						<posx>0</posx>
-						<posy>335</posy>
+						<posy>447</posy>
 						<width>208</width>
 						<height>256</height>
 						<aspectratio>stretch</aspectratio>
 						<fadetime>200</fadetime>
 						<texture background="true" flipy="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
 						<colordiffuse>BBFFFFFF</colordiffuse>
+						<animation effect="slide" start="0,0" end="60,0" time="300" delay="1500" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
 					</control>
 				</itemlayout>
-				<focusedlayout height="336" width="290">
+				<focusedlayout height="400" width="290">
 					<control type="image">
 						<posx>0</posx>
-						<posy>0</posy>
-						<width>256</width>
-						<height>336</height>
+						<posy>185</posy>
+						<width>245</width>
+						<height>245</height>
 						<aspectratio>stretch</aspectratio>
-						<fadetime>200</fadetime>
-						<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
-						<animation reversible="false" effect="zoom" start="0,16,208,256" end="-12,-77,256,336" time="200">focus</animation>
-						<animation reversible="false" effect="zoom" start="-12,0,256,336" end="0,77,208,256" time="200">unfocus</animation>
+						<fadetime>50</fadetime>
+						<texture background="true">$INFO[ListItem.Path]disc.png</texture>
+						<animation effect="slide" start="0,0" end="100,0" time="300" delay="1500" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
+						<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused + !Skin.HasSetting(zombie_osd)">Conditional</animation>
+						<animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="!Player.Paused + Skin.HasSetting(zombie_osd)">Conditional</animation>
 					</control>
 					<control type="image">
 						<posx>0</posx>
-						<posy>340</posy>
+						<posy>45</posy>
+						<width>256</width>
+						<height>396</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
+						<animation reversible="false" effect="zoom" start="0,0,208,296" end="-12,-107,256,396" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" start="-12,0,256,396" end="0,107,208,296" time="200">unfocus</animation>
+						<animation effect="slide" start="0,0" end="-17,0" time="300" delay="1500" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>445</posy>
 						<width>256</width>
 						<height>336</height>
 						<aspectratio>stretch</aspectratio>
 						<fadetime>200</fadetime>
 						<texture background="true" flipy="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
 						<colordiffuse>BBFFFFFF</colordiffuse>
+						<animation effect="slide" start="0,0" end="-17,0" time="300" delay="1500" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
 					</control>					
 					<control type="image">
 						<posx>130</posx>
-						<posy>-35</posy>
+						<posy>-5</posy>
 						<width>125</width>
 						<height>125</height>
 						<aspectratio>stretch</aspectratio>
-						<fadetime>200</fadetime>
+						<fadetime>50</fadetime>
 						<texture background="true">overlay3d.png</texture>
 						<visible>substring(ListItem.Genre,action)</visible>
-					</control>					
+					</control>	
 				</focusedlayout>
+				<control type="grouplist">
+					<description>Media Codec Flagging Images</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<align>center</align>
+						<itemgap>2</itemgap>
+						<orientation>horizontal</orientation>
+						<include>VideoCodecFlaggingConditions</include>
+						<include>AudioCodecFlaggingConditions</include>
+						<include>AudioChannelsFlaggingConditions</include>
+						<include>AspectCodecFlaggingConditions</include>
+						<include>VideoTypeHackFlaggingConditions</include>
+				</control>
 			</control>
 		</control>
 	</include>
