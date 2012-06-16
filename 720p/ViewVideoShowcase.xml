@@ -2,7 +2,7 @@
 	<include name="Showcase">
 		<control type="group">
 			<control type="image">
-				<posy>-490</posy>
+				<posy>-480</posy>
 				<posx>0</posx>
 				<width>1380</width>
 				<height>750</height>
@@ -39,7 +39,7 @@
 						<aspectratio>stretch</aspectratio>
 						<fadetime>200</fadetime>
 						<texture background="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
-						<animation effect="slide" start="0,0" end="60,0" time="300" delay="1500" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
+						<animation effect="slide" start="0,0" end="60,0" time="400" delay="2000" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
 					</control>
 					<control type="image">
 						<posx>0</posx>
@@ -50,7 +50,7 @@
 						<fadetime>200</fadetime>
 						<texture background="true" flipy="true" diffuse="movie_mask.png">$INFO[ListItem.Icon]</texture>
 						<colordiffuse>BBFFFFFF</colordiffuse>
-						<animation effect="slide" start="0,0" end="60,0" time="300" delay="1500" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
+						<animation effect="slide" start="0,0" end="60,0" time="400" delay="2000" condition="!Container(561).OnNext + !Container(561).OnPrevious">Conditional</animation>
 					</control>
 				</itemlayout>
 				<focusedlayout height="400" width="290">
