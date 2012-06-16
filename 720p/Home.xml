@@ -16,61 +16,84 @@
 		<!-- Music Info -->
 		<control type="group">
 			<posx>0</posx>
-			<posy>20</posy>
+			<posy>25</posy>
 			<visible>Player.HasAudio + !Skin.HasSetting(homepageMusicinfo) + ![Container(9000).HasFocus(2) + ![Skin.HasSetting(HomeMenuNoMoviesButton) | Skin.HasSetting(HomeMenuNoTVShowsButton)] + Skin.HasSetting(homepageShowRecentlyAdded)]</visible>
 			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<description>Cover image</description>
 				<posx>20</posx>
-				<posy>45</posy>
-				<width>130</width>
-				<height>300</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture>$INFO[MusicPlayer.Cover]</texture>
-				<bordertexture border="8">ThumbBorder.png</bordertexture>
-				<bordersize>5</bordersize>
+				<posy>285</posy>
+				<width>208</width>
+				<height>208</height>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<texture diffuse="music_mask.png">$INFO[MusicPlayer.Cover]</texture>
+				<bordertexture>playback.png</bordertexture>
+				<bordersize>7</bordersize>
 			</control>
+			<control type="image">
+				<description>Cover image</description>
+				<posx>220</posx>
+				<posy>230</posy>
+				<width>230</width>
+				<height>230</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture>playarrow.png</texture>
+			</control>			
+		
 			<control type="label">
 				<description>Album Label</description>
-				<posx>170</posx>
-				<posy>265</posy>
+				<posx>240</posx>
+				<posy>275</posy>
 				<height>25</height>
 				<width>1000</width>
-				<label>$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]</label>
+				<label>$INFO[MusicPlayer.Artist]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12</font>
+				<font>fruity23</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
+				<description>Album Label</description>
+				<posx>240</posx>
+				<posy>305</posy>
+				<height>25</height>
+				<width>1000</width>
+				<label>$INFO[MusicPlayer.Album]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>fruity19b</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>			
+			<control type="label">
 				<description>Title label</description>
-				<posx>170</posx>
-				<posy>285</posy>
+				<posx>255</posx>
+				<posy>428</posy>
 				<height>30</height>
 				<width>1000</width>
 				<label>$INFO[MusicPlayer.Title]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font13_title</font>
+				<font>fruity23</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="label">
 				<description>Time Label</description>
-				<posx>170</posx>
-				<posy>310</posy>
+				<posx>248</posx>
+				<posy>458</posy>
 				<height>30</height>
 				<width>300</width>
-				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=blue] / [/COLOR]]</label>
+				<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=green] / [/COLOR]]</label>
 				<align>left</align>
 				<aligny>center</aligny>
-				<font>font12</font>
+				<font>fruity19b</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-			</control>
-		</control>
+			</control> 
+		</control> 
 		<!-- Video Info -->
 		<control type="group">
 			<posx>0</posx>
@@ -242,7 +265,7 @@
 			<ondown>9000</ondown>
 			<visible>false</visible>
 		</control>
-		<control type="group">
+	<!--	<control type="group">
 			<description>Controls for currently playing media</description>
 			<posx>400r</posx>
 			<posy>340</posy>
@@ -256,27 +279,20 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="image">
-				<description>Background End image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>35</width>
-				<height>35</height>
-				<colordiffuse>CCFFFFFF</colordiffuse>
-				<texture flipy="true" border="0,5,0,0" flipx="true">HomeSubEnd.png</texture>
-			</control>
+
 			<control type="group" id="600">
-				<posx>35</posx>
+				<posx>-855</posx>
+				<posy>150</posy>
 				<onup>9003</onup>
 				<ondown>9000</ondown>
 				<defaultcontrol>603</defaultcontrol>
 				<control type="image">
 					<description>Background image</description>
 					<posx>0</posx>
-					<posy>0</posy>
-					<width>205</width>
+					<posy>-2</posy>
+					<width>197</width>
 					<height>35</height>
-					<texture flipy="true" border="0,5,0,0">HomeSubNF.png</texture>
+					<texture flipy="true" border="0,5,0,0">InfoMessagePanel.png</texture>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 				</control>
 				<control type="button" id="601">
@@ -367,34 +383,8 @@
 					<ondown>9000</ondown>
 					<onclick>XBMC.PlayerControl(Next)</onclick>
 				</control>
-			</control>
-			<control type="radiobutton" id="607">
-				<colordiffuse>CCFFFFFF</colordiffuse>
-				<description>Go to fullscreen Playback</description>
-				<posx>240</posx>
-				<posy>0</posy>
-				<height>35</height>
-				<width>160</width>
-				<textwidth>150</textwidth>
-				<textoffsetx>10</textoffsetx>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font12</font>
-				<textcolor>grey2</textcolor>
-				<focusedcolor>white</focusedcolor>
-				<texturefocus flipy="true" border="5">HomeSubFO.png</texturefocus>
-				<texturenofocus flipy="true" border="5">HomeSubNF.png</texturenofocus>
-				<pulseonselect>false</pulseonselect>
-				<label>31008</label>
-				<onclick>fullscreen</onclick>
-				<textureradiofocus>GoFullscreen.png</textureradiofocus>
-				<textureradionofocus>GoFullscreen.png</textureradionofocus>
-				<onleft>606</onleft>
-				<onright>601</onright>
-				<onup>9003</onup>
-				<ondown>9000</ondown>
-			</control>
-		</control>
+			</control> 
+		</control> -->
 		<control type="group" id="9001">
 				<posx>262</posx>
 				<posy>598</posy>
