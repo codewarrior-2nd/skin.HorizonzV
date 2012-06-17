@@ -37,7 +37,7 @@
 		<posy>0</posy>
 		<width>1060</width>
 		<height>28</height>
-		<font>font12caps</font>
+		<font>intro</font>
 		<textcolor>white</textcolor>
 		<scroll>false</scroll>
 		<align>right</align>
@@ -54,11 +54,11 @@
 				<posy>0</posy>
 				<width>80</width>
 				<height>35</height>
-				<texture border="0,0,32,0">header.png</texture>
+				<texture border="0,0,32,0">rssfeed1.png</texture>
 			</control>
 			<control type="button">
 				<hitrect x="0" y="0" w="60" h="30" />
-				<posx>20</posx>
+				<posx>10</posx>
 				<posy>5</posy>
 				<width>25</width>
 				<height>20</height>
@@ -144,15 +144,6 @@
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
 			<visible>true</visible>
-		</control>
-		<control type="button" id="9001">
-			<posx>250</posx>
-			<posy>260</posy>
-			<width>42</width>
-			<height>128</height>
-			<font>-</font>
-			<texturefocus>HasSub.png</texturefocus>
-			<texturenofocus>HasSub.png</texturenofocus>
 		</control>
 		<control type="image">
 			<posx>0</posx>
@@ -762,11 +753,11 @@
 				<posy>0</posy>
 				<width>150</width>
 				<height>35</height>
-				<texture flipx="true" border="32,0,0,0">header.png</texture>
+				<texture flipx="false" border="32,0,0,0">timepanel3.png</texture>
 			</control>
 			<control type="label">
 				<description>time label</description>
-				<posx>30</posx>
+				<posx>55</posx>
 				<posy>0</posy>
 				<width>400</width>
 				<height>28</height>

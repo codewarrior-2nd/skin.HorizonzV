@@ -1,8 +1,8 @@
 <includes>
 	<include name="HomeRecentlyAddedInfo">
 		<control type="image">
-			<posx>660</posx>
-			<posy>25</posy>
+			<posx>280</posx>
+			<posy>-2</posy>
 			<width>640</width>
 			<height>375</height>
 			<texture flipx="true">showcasepanel3.png</texture>
@@ -10,8 +10,8 @@
 			<visible>Container(9000).HasFocus(10) | Container.HasFocus(8000)</visible>
 		</control>
 			<control type="image">
-				<posx>670</posx>
-				<posy>20</posy>
+				<posx>280</posx>
+				<posy>-5</posy>
 				<width>53</width>
 				<height>24</height>
 				<texture>glint.png</texture>
@@ -26,8 +26,8 @@
 				</animation>
 			</control>
 			<control type="image">
-				<posx>670</posx>
-				<posy>285</posy>
+				<posx>280</posx>
+				<posy>255</posy>
 				<width>53</width>
 				<height>24</height>
 				<texture>glint.png</texture>
@@ -130,8 +130,8 @@
 			</control>
 <!-- Ones to show if TVShows or Movies button is enabled in home -->
 			<control type="group">
-				<posx>190</posx>
-				<posy>30</posy>
+				<posx>-190</posx>
+				<posy>0</posy>
 				<visible>Library.HasContent(Movies)</visible>
 				<visible>Container(9000).Hasfocus(10) | [[Container(9000).Hasfocus(2) + !Skin.HasSetting(HomeMenuNoMoviesButton)] + Skin.HasSetting(HomeMenuNoTVShowsButton)]</visible>
 				<include>VisibleFadeEffect</include>

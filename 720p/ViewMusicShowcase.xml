@@ -73,9 +73,43 @@
 						<texture background="true" flipy="true" diffuse="music_mask.png">$INFO[ListItem.Icon]</texture>
 						<colordiffuse>BBFFFFFF</colordiffuse>
 						<animation reversible="false" effect="zoom" easing="out" start="0,0,250,250" end="0,0,284,284" time="200">focus</animation>
-					</control>		 -->			
+					</control>		 -->
 				</focusedlayout>
 			</control>
 		</control>
-	</include>
+				<control type="label">
+					<description>item label</description>
+					<posx>490</posx>
+					<posy>630</posy>
+					<width>600</width>
+					<height>28</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>acens30</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<description>item label</description>
+					<posx>490</posx>
+					<posy>670</posy>
+					<width>600</width>
+					<height>28</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>acens30</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>$INFO[ListItem.Artist]</label>
+					<visible>Container.Content(Albums)</visible>
+				</control>
+				<control type="image">
+					<posx>100</posx>
+					<posy>600</posy>
+					<width>276</width>
+					<height>107</height>
+					<texture background="true">D:/Musik/XBMC Datenbank/$INFO[ListItem.Artist]/logo.png</texture>
+				</control>				
+		</include>
 </includes>	
