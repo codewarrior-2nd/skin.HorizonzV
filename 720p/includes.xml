@@ -16,6 +16,7 @@
 	<include file="weather+\HourlyForecast.xml" />
 	<include file="weather+\MapsVideo.xml" />
 	<include file="ViewVideoShowcase.xml" />
+	<include file="ViewMusicShowcase.xml" />
 
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
@@ -744,7 +745,7 @@
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.SortLetter]</label>
 				<textcolor>white</textcolor>
-				<font>font30_title</font>
+				<font>fruity30</font>
 			</control>
 		</control>
 	</include>

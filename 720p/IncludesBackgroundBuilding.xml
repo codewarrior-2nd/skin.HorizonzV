@@ -165,7 +165,7 @@
 		</control>
 	</include>
 	<include name="ContentPanelBackgrounds">
-			<control type="image">
+<!--	<control type="image">
 			<posx>0</posx>
 			<posy>100r</posy>
 			<width>1280</width>
@@ -173,8 +173,8 @@
 			<texture>floor.png</texture>
 			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
-			<visible>!Control.IsVisible(561)</visible>
-		</control>
+			<visible>!Control.IsVisible(561) | !Control.IsVisible(562)</visible>
+		</control> -->
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<control type="group">
