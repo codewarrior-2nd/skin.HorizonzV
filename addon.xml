@@ -20,7 +20,7 @@
     <description lang="en">Horizonz was one of the first AEON Mods around back in 2008 and some earlier. This skin brings it's look back to the current Version of XBMC with all new features that came since then</description>
     <description lang="de">Horizonz war einer der ersten AEON Mods aus 2008. Dieser Skin bringt ihn zurück ins Leben für die aktuelle Version von XBMC inklusive allen Features die seit damals dazu kamen</description>
     <disclaimer lang="en">ATTENTION: This is far from being considered as stable</disclaimer>
-    <disclaimer lang="de">ACHTUNG: Das ist bei weitem noch kein stabiler Skin</disclaimer>
+    <disclaimer lang="de">ACHTUNG: Das ist bei weitem noch kein stailer Skin</disclaimer>
     <platform>all</platform>
   </extension>
 </addon>
